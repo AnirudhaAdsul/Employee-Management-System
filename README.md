@@ -24,15 +24,9 @@ A console-based Employee Management System developed using Java, JDBC, and MySQL
 
 ## Database Structure
 
-Database name:
+**Database:** `employee_management`
 
-`employee_management`
-
-Table name:
-
-`employees`
-
-Columns:
+**Table:** `employees`
 
 | Column     | Type         | Description                 |
 | ---------- | ------------ | --------------------------- |
@@ -54,6 +48,7 @@ Employee Management System
 ├── lib
 │   └── mysql-connector-j-26.7.0.jar
 │
+├── .gitignore
 └── README.md
 ```
 
@@ -62,10 +57,38 @@ Employee Management System
 1. Install Java JDK.
 2. Install MySQL.
 3. Create the `employee_management` database and `employees` table.
-4. Configure the database connection in `DatabaseConnection.java`.
-5. Compile the Java files with the MySQL Connector/J library.
-6. Run `Main.java`.
+4. Create a local `config.properties` file in the project root.
+5. Add your MySQL password to `config.properties`:
+
+```text
+db.password=YOUR_MYSQL_PASSWORD
+```
+
+6. Make sure `config.properties` is not uploaded to GitHub. It is already included in `.gitignore`.
+7. Open the terminal inside the `src` folder.
+8. Compile the project:
+
+```text
+javac -cp ".;..\lib\mysql-connector-j-26.7.0.jar" Main.java Employee.java DatabaseConnection.java
+```
+
+9. Run the project:
+
+```text
+java -cp ".;..\lib\mysql-connector-j-26.7.0.jar" Main
+```
 
 ## Learning Outcomes
 
-This project helped me practice Java programming, object-oriented programming, JDBC database connectivity, SQL CRUD operations, exception handling, input validation, and resource management.
+This project helped me practice:
+
+* Java programming
+* Object-Oriented Programming
+* JDBC database connectivity
+* SQL CRUD operations
+* Exception handling
+* Input validation
+* PreparedStatement
+* Resource management
+* MySQL database integration
+
